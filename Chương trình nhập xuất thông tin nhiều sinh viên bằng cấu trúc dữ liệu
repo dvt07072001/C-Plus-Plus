@@ -1,0 +1,75 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+struct thongtinsinhvien
+{
+	string Hoten;
+	string mssv;
+	float diemtoan;
+	float diemsinh;
+	float diemhoa;
+};
+
+typedef struct thongtinsinhvien THONGTINSINHVIEN;
+
+void nhapthongtin(THONGTINSINHVIEN& nhap)
+{
+	/*rewind(stdin);*/
+	cin.ignore();
+	cout << "Nhap vao ho ten sinh vien : ";
+	getline(cin, nhap.Hoten);
+
+	cout << "Nhap vao ma so sinh vien : ";
+	getline(cin, nhap.mssv);
+
+	cout << "Nhap vao diem toan : ";
+	cin >> nhap.diemtoan;
+
+	cout << "Nhap vao diem sinh : ";
+	cin >> nhap.diemsinh;
+
+	cout << "Nhap vao diem hoa : ";
+	cin >> nhap.diemhoa;
+}
+
+void xuatthongtin(THONGTINSINHVIEN& xuat)
+{
+	cout << "Ho ten sinh vien : " << xuat.Hoten << endl;
+	cout << "Ma so sinh vien : " << xuat.mssv << endl;
+	cout << "Diem toan : " << xuat.diemtoan << endl;
+	cout << "Diem sinh : " << xuat.diemsinh << endl;
+	cout << "Diem hoa : " << xuat.diemhoa << endl;
+}
+
+void nhapthongtinnhieusinhvien(THONGTINSINHVIEN a[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << "\n\n\t\tNHAP VAO THONG TIN SINH VIEN THU : " << i + 1 << endl;
+		nhapthongtin(a[i]);
+	}
+}
+
+void xuatthongtinnhieusinhvien(THONGTINSINHVIEN a[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << "\n\n\t\tXUAT THONG TIN SINH VIEN THU : " << i + 1 << endl;
+		xuatthongtin(a[i]);
+	}
+}
+
+int main()
+{
+	int  n;
+	THONGTINSINHVIEN a[100];
+	cout << "Nhap vao so luong sinh vien : ";
+	cin >> n;
+	cout << "\n\n\t\tNHAP VAO THONG TIN SINH VIEN : " << endl;
+	nhapthongtinnhieusinhvien(a, n);
+	cout << "\n\n\t\tXUAT THONG TIN SINH VIEN : " << endl;
+	xuatthongtinnhieusinhvien(a, n);
+
+	return 0;
+}
