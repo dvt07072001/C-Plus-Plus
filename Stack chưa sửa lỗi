@@ -1,0 +1,108 @@
+#include <iostream>
+sử dụng không gian tên std;
+#define MAX 100
+
+typedef struct
+{
+	int đầu;
+	nút int [MAX];
+} cây rơm;
+
+bool rỗng (ngăn xếp * s)
+{
+	if (s -> top == -1)
+		trả về true;
+	trả về sai;
+}
+
+bool Đầy đủ (ngăn xếp * s)
+{
+	if (s-> top == MAX - 1)
+		trả về true;
+	trả về sai;
+}
+
+void Push (stack * s, int x)
+{
+	nếu (Đầy đủ)
+	{ 
+		cout << "Ngan xep day!";
+		trở về;
+	}
+	khác 
+	{
+		s-> top ++;
+		s-> nút [s-> top] = x; 
+		trở về;
+	}
+}
+
+void nhapnhieuphantu (stack s)
+{
+	int n;
+	int c;
+	cout << "\ nNhap vao so luong phan tu:";
+	cin >> n;
+	for (int i = 0; i <n; i ++)
+	{
+		tua lại;
+		cout << "Nhap vao phan tu thu" << i << endl;
+		cin >> c;
+		Đẩy (& s, c);
+	}
+}
+
+int Pop (stack * s)
+{
+	if ((Các) trống)
+	{
+		cout << "Ngan xep rong!";
+	}
+	khác
+	{
+		return s-> nút [s-> top--];
+	}
+}
+
+void xuatnhieuphantu (stack s)
+{
+	/ * int n;
+	int c;
+	cout << "Nhap vao so luong phan tu:";
+	cin >> n; * /
+	for (int i = 0; i <2; i ++)
+	{
+		cout << "Xuat phan tu thu" << i << Pop (& s);
+	}
+}
+
+
+int main ()
+{
+	ngăn xếp x;
+	x.top = -1;
+	/ * if (Rỗng (& x))
+	{
+		cout << "Rong" << endl;
+	}
+	khác
+	{
+		cout << "Khong rong.";
+	}
+
+	if (Full (& x) == true)
+	{
+		cout << "day" << endl;
+	}
+	khác
+	{
+		cout << "Chua day" << endl;
+	} * /
+
+	/ * Đẩy (& x, 5);
+	cout << "Phan tu la:" << Pop (& x); * /
+
+	nhapnhieuphantu (x);
+	xuatnhieuphantu (x);
+	trả về 0;
+}
