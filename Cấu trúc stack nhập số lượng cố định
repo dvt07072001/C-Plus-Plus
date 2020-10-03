@@ -1,0 +1,86 @@
+#include<iostream>
+#include<stack>
+#include<queue>
+using namespace std;
+const int Max = 100;
+
+typedef struct
+{
+	int top;
+	int Node[Max];
+}stack;
+
+bool Empty(stack* s)
+{
+	if (s->top == -1)
+		return true;
+	return false;
+}
+
+bool Full(stack* s)
+{
+	if (s->top == Max - 1)
+		return true;
+	return false;
+}
+
+void Push(stack* s, int x)
+{
+	if (Full(s))
+	{
+		cout << "Ngan xep da day.";
+	}
+	else
+	{
+		s -> top++;
+		s->Node[s->top] = x;
+	}
+}
+
+int Pop(stack* s)
+{
+	if (Empty(s))
+	{
+		cout << "Ngan xep rong.";
+	}
+	else
+	{
+		return s->Node[s->top--];
+	}
+}
+
+int main()
+{
+	
+	stack* s = new stack;
+	s->top = -1;
+	if (Empty(s) == true)
+	{
+		cout << "Ngan xep rong." << endl;
+	}
+	else
+	{
+		cout << "Ngan xep khong rong." << endl;
+	}
+
+	if (Full(s) == true)
+	{
+		cout << "Ngan xep day." << endl;
+	}
+	else
+	{
+		cout << "Ngan xep chua day." << endl;
+	}
+	int n;
+	cout << "Nhap vao so luong phan tu: "; cin >> n;
+	for (int i = 0; i < n; ++i) {
+		int a;
+		cout << "Nhap phan tu thu " << i << ": "; cin >> a;
+		Push(s, a);
+	}
+	cout << "Cac phan tu trong stack la: ";
+	while (s->top != -1) {
+		cout << Pop(s) << " ";
+	}
+	return 0;
+}
