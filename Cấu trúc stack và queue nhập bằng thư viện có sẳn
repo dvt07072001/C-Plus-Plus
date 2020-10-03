@@ -1,0 +1,33 @@
+#include<iostream>	//Cau truc stack va queue nhap bang thu vien co san.
+#include<stack>
+#include<queue>
+using namespace std;
+
+int main() 
+{
+	stack<int>st;
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; ++i) {
+		int a;
+		cin >> a;
+		st.push(a);
+	}
+	while (!st.empty()) {
+		cout << st.top() << " ";
+		st.pop();
+	}
+	queue<int>q;
+	int m;
+	cin >> m;
+	for (int i = 0; i < m; ++i) {
+		int a;
+		cin >> a;
+		q.push(a);
+	}
+	while (!q.empty()) {
+		cout << q.front() << " ";
+		q.pop();
+	}
+	return 0;
+}
