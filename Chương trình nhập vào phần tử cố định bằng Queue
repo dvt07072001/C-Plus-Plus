@@ -1,0 +1,62 @@
+#include<iostream>	//Nhap phan tu co dinh.
+using namespace std;
+const int Max = 100;
+
+typedef struct
+{
+	int inp;
+	int out;
+	int Node[Max];
+}queue;
+
+int Empty(queue* q)
+{
+	if (q->inp == q->out)
+		return 1;
+	return 0;
+}
+
+int Full(queue* q)
+{
+	if (q->inp == Max - 1)
+		return 1;
+	return 0;
+}
+
+void Push(queue* q,int x)
+{
+	if (!Full(q))
+	{
+		q->inp = (q->inp) + 1;
+		q->Node[q->inp] = x;
+	}
+	else
+	{
+		cout << "Tran bo nho." << endl;
+	}
+}
+
+int Pop(queue* q)
+{
+	if (!Empty(q))
+	{
+		q-> out = (q -> out) + 1;
+		int x = q->Node[q-> out];
+		return x;
+	}
+	else
+	{
+		cout << "Ngan xep rong.";
+		return 0;
+	}
+}
+
+int main()
+{
+	queue* q = new queue;
+	q->inp = -1;
+	q->out=-1;
+	Push(q,2);
+	cout << Pop(q);
+	return 0;
+}
